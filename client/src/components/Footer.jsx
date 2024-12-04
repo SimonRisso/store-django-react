@@ -4,9 +4,9 @@ import { Link } from "react-router-dom";
 export function Footer() {
     return (
         <footer className="bg-white text-blue-800 pt-1 pb-5">
-            <div className="container mx-auto flex flex-wrap justify-between items-center px-6">
+            <div className="container mx-auto flex flex-col md:flex-row justify-between items-center px-6">
                 {/* Redes sociales */}
-                <div className="flex gap-6 mt-7">
+                <div className="flex gap-6 mt-7 justify-center md:justify-start">
                     <a
                         href="https://www.linkedin.com/in/simonrisso/"
                         target="_blank"
@@ -25,7 +25,7 @@ export function Footer() {
                     </a>
                 </div>
 
-                <div className="text-center w-full md:w-auto mt-7 ml-7">
+                <div className="text-center w-full md:w-auto mt-7">
                     <p className="text-sm font-poppins text-pink-800">
                         &copy; {new Date().getFullYear()} - Simón Risso. Todos los derechos reservados.
                     </p>
@@ -40,8 +40,8 @@ export function Footer() {
                     </p>
                 </div>
 
-                <div>
-                    <Link to="/" className="block w-[247.03px] h-[102px]">
+                <div className="hidden md:block">
+                    <Link to="/" className="block md:w-[247.03px] md:h-[102px]">
                         <LogoStore className="hover:cursor-pointer" />
                     </Link>
                 </div>

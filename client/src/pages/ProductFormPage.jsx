@@ -62,7 +62,7 @@ export function ProductFormPage() {
   }, []);
 
   return (
-    <div className="flex flex-grow items-center justify-center">
+    <div className="flex items-center justify-center min-h-[75vh]">
       <form onSubmit={onSubmit} className="space-y-4">
         <div>
           <label 
@@ -107,7 +107,7 @@ export function ProductFormPage() {
           <select 
             id="category"
             defaultValue="" {...register("category", { required: true })}
-            className="bg-blue-400/35 text-white placeholder-white/50 p-3 rounded-lg block w-full focus:outline-none focus:ring-2 focus:ring-pink-500"
+            className="bg-blue-400/35 text-white p-3 rounded-lg block w-full focus:outline-none focus:ring-2 focus:ring-pink-500"
           >
             <option value="" disabled className="bg-blue-800 text-white">Selecciona una categoría</option>
             <option value="t-shirt" className="bg-blue-800 text-white">Remera</option>

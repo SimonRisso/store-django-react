@@ -1,4 +1,4 @@
-import { createContext, useState, useCallback, useContext, useMemo } from "react";
+import { createContext, useState, useContext, useMemo } from "react";
 
 export const ShoppingCartContext = createContext({
     products: [],
@@ -11,12 +11,18 @@ export const ShoppingCartProvider = ({ children }) => {
     const [products, setProducts] = useState([]);
 
     const totalAmount = useMemo(() => {
-        return products.reduce((total, product) => total + Number(product.price), 0)
+        return products.reduce((total, product) => total + Number(product.totalPrice), 0)
     }, [products]);
 
-    const addProduct = (product) => {
-        setProducts((prevProducts) => [...prevProducts, product]);
-    };
+    const addProduct = (product, quantity, size) => {
+        const productWithTotal = {
+            ...product,
+            quantity,
+            size,
+            totalPrice: product.price * quantity
+        };
+        setProducts((prevProducts) => [...prevProducts, productWithTotal]);
+    };      
 
     const removeProduct = (productId) => {
         setProducts((prevProducts) => {

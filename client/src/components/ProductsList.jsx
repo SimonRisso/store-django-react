@@ -11,7 +11,6 @@ export function ProductsList({category}) {
     async function loadProducts() {
       try {
         let res;
-
         if (category === "t-shirt") {
           res = await getTShirt();
         } else if (category === "accesory") {
@@ -19,18 +18,16 @@ export function ProductsList({category}) {
         } else {
           res = await getAllProducts();
         }
-
         setProducts(res.data);
       } catch (error) {
         console.error("Error al cargar productos: ", error);
       }
     }
-
     loadProducts();
   }, [category])
 
   return (
-    <div className="grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-3 p-8">
+    <div className="grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-4 p-8">
       {products.map((product) => (
         <ProductCard key={product.id} product={product} />
       ))}

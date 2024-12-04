@@ -19,6 +19,12 @@ export default {
       animation: {
         slide: 'slide 0.5s ease-out forwards'
       },
+      scale: {
+        70: "0.7"
+      },
+      screens: {
+        'custom': '1030px'
+      },
     },
   },
   plugins: [],
